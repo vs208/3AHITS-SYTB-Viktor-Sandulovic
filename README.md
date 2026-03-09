@@ -37,28 +37,9 @@ git config --global user.email "Viktor.Sandulovic@htl-braunau.at"
 
 ## 4. Arbeiten in VS Code und Git Workflow
 Nachdem das Repository geklont wurde, wird der Ordner in VS Code geöffnet.
-```bash
-code .
-```
-
-**Erstellung der HTML-Datei:**
-1. In VS Code eine neue Datei namens `index.html` erstellen.
-2. Ein grundlegendes HTML-Gerüst einfügen (in VS Code: `!` eingeben und `Tab` drücken).
-3. Den gewünschten Inhalt (z. B. eine Überschrift und Text für die Abgabe) hinzufügen und speichern.
 
 **Änderungen in Git erfassen und hochladen (Commit & Push):**
-Um die neue Datei in das GitHub-Repository hochzuladen, werden folgende Befehle im integrierten Terminal von VS Code ausgeführt:
-
-```bash
-# Alle Änderungen zur Staging Area hinzufügen
-git add .
-
-# Änderungen mit einer aussagekräftigen Nachricht bestätigen
-git commit -m "feat: index.html für Abgabe hinzugefügt"
-
-# Änderungen auf GitHub hochladen
-git push origin main
-```
+Um die neue Datei in das GitHub-Repository hochzuladen, auf commit changes drücken.
 
 ## 5. Bereitstellung des abgabereifen HTML-Links
 Um nicht nur den Quellcode, sondern die gerenderte Webseite abzugeben, wird **GitHub Pages** genutzt.
