@@ -10,13 +10,19 @@
 ### Übung (Variablen)
 
 DIR1="ordner1"
+
 DIR2="ordner2"
+
 FNAME="datei"
+
 EXT="txt"
 
 mkdir -p "$DIR1/$DIR2"
+
 echo "Hallo Welt" > "$DIR1/$DIR2/${FNAME}.${EXT}"
+
 cat "$DIR1/$DIR2/${FNAME}.${EXT}"
+
 
 
 ---
@@ -38,6 +44,7 @@ echo "Schön, dass du da bist."
 ### Übung (Zeilenumbruch)
 
 MSG="Name: Viktor\nKlasse: 3AHITS\nRaum: ..."
+
 echo -e "$MSG"
 
 
@@ -46,7 +53,9 @@ echo -e "$MSG"
 ### Übung (admin)
 
 USER="admin"
+
 echo "${USER}_backup"
+
 echo "${USER}_2026"
 
 
@@ -55,7 +64,9 @@ echo "${USER}_2026"
 ### Übung (log file names)
 
 DIR="/var/log/"
+
 echo "${DIR}nginx"
+
 echo "${DIR}apache"
 
 
