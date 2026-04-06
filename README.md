@@ -2,46 +2,67 @@
 
 **Klasse:** 3AHITS  
 **Name:** Viktor Sandulovic  
-**Fach:** SYTB  
+**Fach:** ITSI  
 **Datum:** 24.03.2026  
 
 ---
 
 ### Übung (Variablen)
 
-```bash
 DIR1="ordner1"
 DIR2="ordner2"
 FNAME="datei"
 EXT="txt"
 
 mkdir -p "$DIR1/$DIR2"
-
 echo "Hallo Welt" > "$DIR1/$DIR2/${FNAME}.${EXT}"
-
 cat "$DIR1/$DIR2/${FNAME}.${EXT}"
 
-#Übung (Begrüßung)
+
+---
+
+### Übung (Begrüßung)
+
+#!/bin/bash
 echo "Name?:"
+
 read NAME
+
 echo "Hallo $NAME"
+
 echo "Schön, dass du da bist."
 
-#Übung (Zeilenumbruch)
+
+---
+
+### Übung (Zeilenumbruch)
+
 MSG="Name: Viktor\nKlasse: 3AHITS\nRaum: ..."
 echo -e "$MSG"
 
-#Übung (admin)
+
+---
+
+### Übung (admin)
+
 USER="admin"
 echo "${USER}_backup"
 echo "${USER}_2026"
 
-#Übung (admin)
+
+---
+
+### Übung (log file names)
+
 DIR="/var/log/"
 echo "${DIR}nginx"
 echo "${DIR}apache"
 
-#Übung (backup)
+
+---
+
+### Übung (backup)
+
 BASE="backup"
 DATE="2026-01-16"
 echo "${BASE}_${DATE}.tar"
