@@ -4,7 +4,7 @@
 **Name:** Viktor Sandulovic  
 **Fach:** ITSI  
 **Datum:** 07.04.2026  
-
+ **Aufgabenstellung:** https://www.franzmatejka.at/htl/doc/SYTB_3/05_scripts_ue.html
 
 ---
 
