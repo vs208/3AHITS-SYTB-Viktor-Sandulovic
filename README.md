@@ -3,7 +3,7 @@
 **Klasse:** 3AHITS  
 **Name:** Viktor Sandulovic  
 **Fach:** ITSE  
-**Datum:** 20.04.2026  
+**Datum:** 14.04.2026 
 **Aufgabenstellung:** https://www.franzmatejka.at/htl/doc/SYTB_3/06_cmdsubst.html
 
 ---
