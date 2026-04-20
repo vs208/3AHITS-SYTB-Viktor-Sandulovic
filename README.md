@@ -35,7 +35,7 @@ Schreibe ein shellscript das als Argument einen Pfad auf ein Verzeichnis erhält
 VERZEICHNIS=$1
 
 # Führt ls aus und zählt die Zeilen mit wc -l
-ANZAHL=$(ls -l "$VERZEICHNIS" | wc -l)
+ANZAHL=$(ls  "$VERZEICHNIS" | wc -l)
 
 echo "Es sind $ANZAHL Einträge im dir $VERZEICHNIS"
 ```
@@ -125,7 +125,7 @@ echo "$SATZ"
 ## 4. Übung: dated copy V1
 
 ### Aufgabenstellung
-Erstellen Sie ein Skript, das einen Dateinamen als erstes Argument entgegennimmt und eine datierte Kopie der Datei erstellt. Beispiel: Wenn unsere Datei den Namen „.txt“ trägt file1.txtund heute der 29.10.2021 ist, soll eine Kopie wie (z.B. `2021-10-29_file1.txt`).
+Erstellen Sie ein Skript, das einen Dateinamen als erstes Argument entgegennimmt und eine datierte Kopie der Datei erstellt. Beispiel: Wenn unsere Datei den Namen „.txt“ trägt file1.txt und heute der 29.10.2021 ist, soll eine Kopie wie (z.B. `2021-10-29_file1.txt`).
 
 ### Theorie
 * **`date +%Y-%m-%d`:** Formatiert das Datum in Jahr-Monat-Tag 
@@ -141,6 +141,3 @@ HEUTE=$(date +%Y-%m-%d)
 
 cp "$DATEINAME" "${HEUTE}_${DATEINAME}"
 ```
-
-
-*(Hinweis: Damit dieses Skript funktioniert, muss `dated_copy_v2.sh` im selben Ordner liegen und mit `chmod +x` ausführbar gemacht worden sein).*
