@@ -91,7 +91,7 @@ Schreibe 2 Skripts: time_start.sh und time_stop.sh. Bei Aufruf von time_stop.sh 
 #!/bin/bash
 TEMP=$(mktemp)
 
-echo "$TEMP" > /tmp/timer_pfad.txt
+echo "$TEMP" > /timer_pfad.txt
 
 date +%s > "$TEMP"
 
@@ -101,7 +101,7 @@ echo "Timer wurde gestartet."
 **Script 2: `time_stop.sh`**
 ```bash
 #!/bin/bash
-TEMP=$(cat /tmp/timer_pfad.txt)
+TEMP=$(cat /timer_pfad.txt)
 
 STARTZEIT=$(cat "$TEMP")
 
