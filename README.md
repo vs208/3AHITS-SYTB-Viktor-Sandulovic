@@ -60,8 +60,7 @@ Schreibe ein Skript das den Namen eines Verzeichnisses übergeben bekommt. Das V
 #!/bin/bash
 VERZEICHNIS=$1
  
-[ -d "$VERZEICHNIS" ] && echo "Verzeichnis $VERZEICHNIS existiert bereits" || (mkdir "$VERZEICHNIS" && echo "Das VERZEICHNIS $VERZEICHNIS wurde erstellt")
-```
+[ -d "$VERZEICHNIS" ] && (echo "Verzeichnis $VERZEICHNIS existiert bereits" && ls "$VERZEICHNIS") || (mkdir "$VERZEICHNIS" && echo "Das VERZEICHNIS $VERZEICHNIS wurde erstellt")```
 
 ---
 
@@ -87,9 +86,9 @@ echo "Es ist $HEUTE"
 # Prüft welcher Tag ist in einzelnen Zeilen ohne if
 [ "$HEUTE" = "Monday" ] && echo "  GGP SEW SEW SEW INSY INSY"
 [ "$HEUTE" = "Tuesday" ] && echo "  SYTB SYTB ITPM E ITSE SYTB"
-[ "$HEUTE" = "Wednesday " ] && echo "  D AM NWT RK E SYTB GGP AM"
-[ "$HEUTE" = "Thursday " ] && echo "  PH AM SYTE ITPM BESP BESP D"
-[ "$HEUTE" = "Friday " ] && echo "  MEDT ITP2A RK ITSE SYTE"
+[ "$HEUTE" = "Wednesday" ] && echo "  D AM NWT RK E SYTB GGP AM"
+[ "$HEUTE" = "Thursday" ] && echo "  PH AM SYTE ITPM BESP BESP D"
+[ "$HEUTE" = "Friday" ] && echo "  MEDT ITP2A RK ITSE SYTE"
 ```
 
 ---
@@ -121,4 +120,4 @@ ZIEL=$2
 ### Aufgabenstellung
 Schreibe und kompiliere ein C-Programm das 2 Argumente über die Kommandozeile erhält. Das Programm soll die Differenz ausgeben und im exit Status anzeigen ob die erste Zahl größer als die zweite Zahl war. Teste den exit Status mit &&. Lass dir dabei von genAI helfen.
 
-Die Aufgabe habe ich zeitlich nicht mehr geschafft
+Die Aufgabe habe ich zeitlich nicht mehr geschafft.
