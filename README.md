@@ -110,7 +110,7 @@ Erstelle ein Skript das ein Markdown Dokument nach HTML konvertiert:
 QUELLE=$1
 ZIEL=$2
 
-[ ! -e "$ZIEL" ] || [ "$QUELLE" -nt "$ZIEL" ] && { pandoc "$QUELLE" } || { "$ZIEL"; echo "Die Datei wurde konvertiert."; } || echo "Konvertieren nicht notwendig."
+[ ! -e "$ZIEL" ] || [ "$QUELLE" -nt "$ZIEL" ] && { pandoc "$QUELLE" } || { "$ZIEL"; echo "Die Datei wurde konvertiert."; }"
 ```
 
 ---
