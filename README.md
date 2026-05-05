@@ -37,9 +37,8 @@ DATEI=$1
 
 INFO=$(ls -l "$DATEI")
 
-INFO_CLEAN=$(echo "$INFO")
 
-GROESSE=$(echo "$INFO_CLEAN" | cut -d' ' -f5)
+GROESSE=$(echo "$INFO" | cut -d' ' -f5)
 
 [ "$GROESSE" -gt 100 ] && echo "Datei ist zu groß" || echo "Größe OK"
 ```
