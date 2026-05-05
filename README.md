@@ -71,7 +71,7 @@ Schreibe ein Bash Script das für den aktuellen Wochentag eine Kurzform des Stun
 
 
 ### Theorie
-* `date +%A` gibt den aktuellen Wochentag aus (z.B. "Montag", "Donnerstag").
+* `date +%A` gibt den aktuellen Wochentag aus.
 
 ### Lösung
 
