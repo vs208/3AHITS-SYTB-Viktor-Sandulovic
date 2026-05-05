@@ -60,9 +60,9 @@ Schreibe ein Skript das den Namen eines Verzeichnisses übergeben bekommt. Das V
 #!/bin/bash
 VERZEICHNIS=$1
  
-[ -d "$VERZEICHNIS" ] && (echo "Verzeichnis $VERZEICHNIS existiert bereits" && ls "$VERZEICHNIS") || (mkdir "$VERZEICHNIS" && echo "Das VERZEICHNIS $VERZEICHNIS wurde erstellt")```
+[ -d "$VERZEICHNIS" ] && (echo "Verzeichnis $VERZEICHNIS existiert bereits" && ls "$VERZEICHNIS") || (mkdir "$VERZEICHNIS" && echo "Das VERZEICHNIS $VERZEICHNIS wurde erstellt")
+```
 
----
 
 ## 3. Übung: Stundenplan
 
