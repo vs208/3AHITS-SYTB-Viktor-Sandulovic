@@ -201,14 +201,12 @@ TAG=$(date +%A)
 STUNDE=$(date +%H)
 ZEIT=$(date +%H:%M)
 
-# Prüfe zuerst, ob überhaupt Donnerstag ist (Deutsch und Englisch abgedeckt)
 if [ "$TAG" != "Thursday" ] && [ "$TAG" != "Donnerstag" ]
 then
     echo "Heute ist nicht Donnerstag!"
     exit 0
 fi
 
-# Prüft die aktuelle Stunde und gibt das echte Fach aus dem Stundenplan aus
 if (( STUNDE == 8 ))
 then
     echo "Donnerstag $ZEIT PH"
