@@ -20,7 +20,7 @@ Regular Expressions  sind Muster mit denen man Texte durchsuchen und verändern 
 * `[ ]` definiert eine Zeichenklasse (z. B. `[a-z]` für alle Kleinbuchstaben).
 
 ### grep
-Das Tool `grep` sucht in Dateien nach bestimmten Textmustern. Mit der Option `-E` aktiviert man **ERE** (Extended Regular Expressions). Das ist wichtig, damit Zeichen wie `+` oder `?` ohne Backslash richtig erkannt werden.
+Das Tool `grep` sucht in Dateien nach bestimmten Textmustern. Mit der Option `-E` aktiviert man **ERE** (Extended Regular Expressions).Damit Zeichen wie `+` oder `?` ohne Backslash richtig erkannt werden.
 
 ### sed 
 `sed` bearbeitet Texte Zeile für Zeile. Der wichtigste Befehl ist das Suchen und Ersetzen:  
