@@ -11,7 +11,7 @@
 ## Theorie: Regular Expressions, grep und sed
 
 ### Regular Expressions (Reguläre Ausdrücke)
-Regular Expressions (Regex oder RE) sind Muster, mit denen man Texte durchsuchen und verändern kann. Sie bestehen aus normalen Zeichen und Metazeichen.
+Regular Expressions  sind Muster mit denen man Texte durchsuchen und verändern kann. Sie bestehen aus normalen Zeichen.
 * `^` steht für den Anfang einer Zeile.
 * `$` steht für das Ende einer Zeile.
 * `.` steht für ein beliebiges Zeichen.
@@ -22,10 +22,9 @@ Regular Expressions (Regex oder RE) sind Muster, mit denen man Texte durchsuchen
 ### grep
 Das Tool `grep` sucht in Dateien nach bestimmten Textmustern. Mit der Option `-E` aktiviert man **ERE** (Extended Regular Expressions). Das ist wichtig, damit Zeichen wie `+` oder `?` ohne Backslash richtig erkannt werden.
 
-### sed (Stream Editor)
-`sed` bearbeitet Textströme Zeile für Zeile. Der wichtigste Befehl ist das Suchen und Ersetzen:  
+### sed 
+`sed` bearbeitet Texte Zeile für Zeile. Der wichtigste Befehl ist das Suchen und Ersetzen:  
 `sed 's/Suchen/Ersetzen/g'`  
-Das `g` am Ende sorgt dafür, dass alle Vorkommen in einer Zeile ersetzt werden (global).
 
 ---
 
@@ -35,7 +34,8 @@ Das `g` am Ende sorgt dafür, dass alle Vorkommen in einer Zeile ersetzt werden 
 Arbeite dich in RegexONE von Lesson 1 – 14.
 
 ### Lösung
-Die Lektionen 1 bis 14 auf RegexONE wurden erfolgreich durchgearbeitet. Dabei wurden die Grundlagen von regulären Ausdrücken wie Zeichenklassen, Quantifier (`*`, `+`), Whitespaces und Wildcards erlernt und interaktiv getestet.
+<img width="1556" height="1067" alt="image" src="https://github.com/user-attachments/assets/2e0b57bb-9f1a-4485-b2d1-7341e805d08a" />
+
 
 ---
 
@@ -47,13 +47,11 @@ Tipp: Directories haben in der ls -l Ausgabe ganz am Beginn ein d.
 
 ### Theorie
 * `ls -l` listet den Inhalt des Verzeichnisses im Langformat auf.
-* Verzeichnisse beginnen in dieser Liste immer mit dem Buchstaben `d`.
 * `grep "^d"` filtert alle Zeilen heraus, die mit einem `d` beginnen.
-* `wc -l` zählt die Zeilen, die von grep weitergegeben werden.
-
+* `wc -l` zählt die Zeilen.
 ### Lösung
 
-**Einzeiler-Befehl:**
+
 ```bash
 ls -l | grep "^d" | wc -l
 ```
@@ -72,19 +70,20 @@ Achtung: ERE daher -E Option notwendig.
 Die RE beschreibt ein typisches Muster für E-Mail-Adressen:
 1. `^[a-zA-Z0-9_.+-]+` : Der Name vor dem `@` darf Buchstaben, Zahlen, Punkte, Unterstriche, Plus und Minus enthalten.
 2. `@` : Das Trennzeichen.
-3. `[a-zA-Z0-9-]+` : Der Providername nach dem `@` darf Buchstaben, Zahlen und Bindestriche enthalten.
-4. `\.` : Ein echter Punkt vor der Top-Level-Domain.
+3. `[a-zA-Z0-9-]+` : Nach dem `@` darf Buchstaben Zahlen und Bindestriche enthalten.
+4. `\.` : Ein Punkt.
 5. `[a-zA-Z0-9.-]+$` : Die Endung darf Buchstaben, Zahlen, Punkte und Bindestriche enthalten.
 
 ### Lösung
 
 **5 unterschiedliche Strings:**
-1. `test@example.com` (Standard-E-Mail)
-2. `viktor.sandulovic+itse@htl-braunau.at` (Mit Plus-Zeichen und Subdomain)
-3. `123_456@sub-domain.net` (Reine Zahlen mit Unterstrich und Bindestrich in Domain)
-4. `a@b.c` (Minimalistische E-Mail mit nur jeweils einem Zeichen)
-5. `my-email.test_group@company.co.uk` (Komplexe Struktur mit mehreren Punkten in der Endung)
+1. `test@example.com` 
+2. `viktor.sandulovic+itse@htl-braunau.at` (Mit Plus-Zeichen)
+3. `123_456@viktor-sandulovic.net` (Reine Zahlen mit Unterstrich und Bindestrich in Domain)
+4. `a@b.c` ( E-Mail mit nur  einem Zeichen)
+5. `my-email.test_group@company.co.uk`
 
+   
 **Test mit grep:**
 ```bash
 echo "test@example.com" | grep -E '^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9.-]+$'
@@ -101,36 +100,18 @@ Löse mit sed:
 * Füge === am Beginn jeder Zeile ein
 * Füge () rund um jedes Wort ein. Ein Wort ist definiert als mindestens ein nicht-Leerzeichen.
 
-### Theorie
-* `\1` in der Ersetzung greift auf die erste gefundene Gruppe `( )` im Suchmuster zu.
-* `[^[:space:]]+` sucht nach einer Kette von Zeichen, die keine Leerzeichen sind (ein Wort).
+
 
 ### Lösung
 
-**Befehle:**
-```bash
-# 1. Entferne alle # am Ende der Zeile
-sed 's/#$//' datei.txt
+<img width="682" height="733" alt="image" src="https://github.com/user-attachments/assets/0568c9e6-cf84-480a-98d7-92808c989108" />
 
-# 2. Entferne alle # am Anfang der Zeile
-sed 's/^#//' datei.txt
-
-# 3. Füge === am Beginn jeder Zeile ein
-sed 's/^/===/' datei.txt
-
-# 4. Füge () rund um jedes Wort ein
-sed -E 's/([^[:space:]]+)/(\1)/g' datei.txt
-```
-
----
 
 ## 5. Übung: Datum
 
 ### Aufgabenstellung
 Mit sed. Datum re-formatieren von YYYY-MM-TT auf TT.MM.YYYY. 01/12/2020-> 12.01.2020. Das Datum kann sich an beliebiger Position in der Zeile befinden.
 
-### Theorie
-Das Muster sucht nach 4 Zahlen für das Jahr, 2 Zahlen für den Monat und 2 Zahlen für den Tag. Die Gruppen werden mit `( )` eingeklammert und in der Reihenfolge `\3.\2.\1` wieder zusammengesetzt.
 
 ### Lösung
 
@@ -153,12 +134,10 @@ Aufgabenstellung:
 * Verwende sed um das Datum umzuformatieren von YYYY-MM-TT auf TT.MM.YYYY. 2021-01-16-> 16.01.2021.
 
 ### Theorie
-* `grep -v` kehrt die Suche um. Es gibt nur Zeilen aus, auf die das Muster **nicht** zutrifft.
-* `|` (Pipe) wird genutzt, um die Ausgabe eines Befehls als Eingabe für den nächsten zu verwenden.
+* `grep -v`  Es gibt nur Zeilen aus, auf die das Muster **nicht** zutrifft.
 
 ### Lösung
 
-**Datei anlegen (ohne touch):**
 ```bash
 cat << 'EOF' > logfile.txt
 2021-01-16 23:38:01 status unpacked libarchive-zip-perl:all 1.60-1ubuntu0.1
@@ -203,10 +182,10 @@ grep "configure" logfile.txt | grep -v "half-configured"
 # 2. Zeilen die 'libsombok' oder 'libposix' enthalten
 grep -E "libsombok|libposix" logfile.txt
 
-# 3. Zeilen ohne die Uhrzeit ausgeben (Uhrzeit löschen)
+# 3. Zeilen ohne die Uhrzeit ausgeben 
 sed -E 's/[0-9]{2}:[0-9]{2}:[0-9]{2} //' logfile.txt
 
-# 4. Zeilen ohne das Datum ausgeben (Datum löschen)
+# 4. Zeilen ohne das Datum ausgeben.
 sed -E 's/[0-9]{4}-[0-9]{2}-[0-9]{2} //' logfile.txt
 
 # 5. Datum umformatieren von YYYY-MM-TT auf TT.MM.YYYY
