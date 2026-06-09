@@ -10,7 +10,7 @@
 
 ## Theorie: Regular Expressions, grep und sed
 
-### Regular Expressions (Reguläre Ausdrücke)
+### Regular Expressions 
 Regular Expressions  sind Muster mit denen man Texte durchsuchen und verändern kann. Sie bestehen aus normalen Zeichen.
 * `^` steht für den Anfang einer Zeile.
 * `$` steht für das Ende einer Zeile.
