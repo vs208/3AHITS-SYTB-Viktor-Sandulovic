@@ -27,7 +27,7 @@ abcd
 
 ### Theorie
 * `[1-9]` stellt sicher, dass die erste Ziffer keine 0 ist.
-* `[0-9]{3}` bedeutet, dass danach genau 3 beliebige Ziffern folgen müssen. Das `{3}` ist eine genaue Längenangabe.
+* `[0-9]{3}` bedeutet, dass danach genau 3 beliebige Ziffern folgen müssen. Das 
 
 ### Lösung
 
@@ -49,7 +49,7 @@ nur h1, h2 oder h3
 
 ### Theorie
 * `(h[1-3])` gruppiert die Überschriften h1 bis h3 und merkt sie sich .
-* `[^<]*` steht für beliebigen Text zwischen den Tags (alles außer dem Zeichen `<`).
+* `[^<]*` steht für beliebigen Text  (alles außer dem Zeichen `<`).
 
 ### Lösung
 
@@ -108,3 +108,29 @@ else
     exit 1
 fi
 ```
+
+## 5. Übung: URLs prüfen
+
+### Aufgabenstellung
+Schreibe einen ERE-Ausdruck für einfache URLs.
+Gültig:
+https://example.com
+http://test.at
+https://sub.domain.org
+Ungültig:
+ftp://example.com
+https:/example.com
+example.com
+Regeln:
+nur http oder https
+Domain darf Buchstaben, Zahlen und Punkte enthalten
+
+### Theorie
+* `^https?://`Das `?` hinter dem `s` bedeutet dass das `s` optional ist. Danach müssen die Zeichen `://` folgen.
+* `[a-zA-Z0-9.]+` ist die Zeichenklasse für die Domain. Das `+` am Ende bedeutet, dass mindestens eines dieser Zeichen vorkommen muss.
+
+### Lösung
+
+**ERE-Ausdruck:**
+```bash
+^https?://[a-zA-Z0-9.]+
