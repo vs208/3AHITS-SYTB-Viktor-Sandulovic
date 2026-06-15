@@ -25,9 +25,6 @@ Ungültig:
 12345
 abcd
 
-### Theorie
-* `[1-9]` stellt sicher, dass die erste Ziffer keine 0 ist.
-* `[0-9]{3}` bedeutet, dass danach genau 3 beliebige Ziffern folgen müssen. Das 
 
 ### Lösung
 
@@ -48,12 +45,11 @@ nur h1, h2 oder h3
 öffnender und schließender Tag müssen zusammenpassen
 
 ### Theorie
-* `(h[1-3])` gruppiert die Überschriften h1 bis h3 und merkt sie sich .
-* `[^<]*` steht für beliebigen Text  (alles außer dem Zeichen `<`).
+* `[^<]*` steht für alles außer <.
 
 ### Lösung
 
-**ERE-Ausdruck (z. B. verwendbar mit grep -E):**
+**ERE-Ausdruck:**
 ```bash
 (<h1>[^<]*</h1>|<h2>[^<]*</h2>|<h3>[^<]*</h3>)
 ```
@@ -72,8 +68,8 @@ jeweils 2 hexadezimale Zeichen
 Trennung durch :
 
 ### Theorie
-* `[0-9A-Fa-f]` ist die Zeichenklasse für hexadezimale Zeichen (Zahlen von 0-9 und Buchstaben von A-F in Groß- oder Kleinschreibung).
-* `([0-9A-Fa-f]{2}:){5}` sucht nach genau 5 Gruppen, die aus 2 Hex-Zeichen und einem Doppelpunkt bestehen. Danach folgt noch eine letzte Gruppe aus 2 Hex-Zeichen ohne Doppelpunkt.
+* `[0-9A-Fa-f]` ist hexadezimahl schreibweise.
+* `([0-9A-Fa-f]{2}:){5}` sucht nach zwei hexa Zeichen die insgesamt 5 mal vorkommen.
 
 ### Lösung
 
@@ -98,7 +94,6 @@ Erstelle ein shell script das eine Mac Adresse als Argument übergeben bekommt u
 
 MAC=$1
 
-# Prüfen mit grep -E (ERE) und -q (keine Textausgabe)
 if echo "$MAC" | grep -E  '^([0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}$'
 then
     echo "Die übergebene MAC-Adresse '$MAC' ist GÜLTIG."
