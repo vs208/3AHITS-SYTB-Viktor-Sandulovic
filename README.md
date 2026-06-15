@@ -4,7 +4,7 @@
 **Name:** Viktor Sandulovic  
 **Fach:** ITSE  
 **Datum:** 02.06.2026  
-**Aufgabenstellung:** Regular Expressions und Validierungs-Skripte
+**Aufgabenstellung:** Regular Expressions
 
 
 
