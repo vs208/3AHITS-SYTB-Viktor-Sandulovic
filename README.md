@@ -39,7 +39,9 @@ abcd
 
 ### Aufgabenstellung
 Finde alle HTML-Überschriften der Form:
-<h1>Text</h1><h2>Hallo</h2><h3>Regex</h3>
+`<h1>Text</h1>`
+`<h2>Hallo</h2>`
+`<h3>Regex</h3>`
 Regeln:
 nur h1, h2 oder h3
 öffnender und schließender Tag müssen zusammenpassen
