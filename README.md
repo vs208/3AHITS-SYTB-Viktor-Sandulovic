@@ -3,7 +3,7 @@
 **Klasse:** 3AHITS  
 **Name:** Viktor Sandulovic  
 **Fach:** ITSE  
-**Datum:** 21.06.2026  
+**Datum:** 16.06.2026  
 **Aufgabenstellung:** Schleifen 
 
 ---
