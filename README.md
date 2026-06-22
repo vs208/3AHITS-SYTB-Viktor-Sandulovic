@@ -179,6 +179,4 @@ done
 ```
 
 
-```bash
-tail -n +2 lager.csv | cut -d';' -f3 | ./avg.sh
-```
+
